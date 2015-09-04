@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2015.09.05 00:18:36.462,=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2015.09.05 00:18:36.477,=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2015.09.05 00:50:52.147,C:\Users\frank_000\Documents\Лабы визуалки билдер\3\Unit1.cpp=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2015.09.05 00:50:52.147,C:\Users\frank_000\Documents\Лабы визуалки билдер\3\Unit1.h=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2015.09.05 00:50:52.147,C:\Users\frank_000\Documents\Лабы визуалки билдер\3\Unit1.dfm=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2015.09.05 00:50:53.534,C:\Users\frank_000\Documents\Лабы визуалки билдер\3\Project1PCH1.h=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2015.09.05 00:50:54.696,C:\Users\frank_000\Documents\Лабы визуалки билдер\3\Project1.cbproj=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

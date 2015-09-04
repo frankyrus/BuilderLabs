@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2015.09.05 00:51:44.146,=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2015.09.05 00:51:44.159,=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2015.09.05 01:29:27.495,=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2015.09.05 01:30:19.377,=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\ABOUT.cpp</Transaction>
+    <Transaction>2015.09.05 01:32:32.685,C:\Users\frank_000\Documents\Лабы визуалки билдер\4\ABOUT.dfm=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\ABOUT.dfm</Transaction>
+    <Transaction>2015.09.05 01:32:32.685,C:\Users\frank_000\Documents\Лабы визуалки билдер\4\ABOUT.cpp=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\ABOUT.cpp</Transaction>
+    <Transaction>2015.09.05 01:32:32.685,C:\Users\frank_000\Documents\Лабы визуалки билдер\4\ABOUT.h=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\ABOUT.h</Transaction>
+    <Transaction>2015.09.05 01:32:35.515,C:\Users\frank_000\Documents\Лабы визуалки билдер\4\Unit1.dfm=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2015.09.05 01:32:35.515,C:\Users\frank_000\Documents\Лабы визуалки билдер\4\Unit1.cpp=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2015.09.05 01:32:35.515,C:\Users\frank_000\Documents\Лабы визуалки билдер\4\Unit1.h=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2015.09.05 01:32:37.258,C:\Users\frank_000\Documents\Лабы визуалки билдер\4\Project1PCH1.h=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2015.09.05 01:32:38.671,C:\Users\frank_000\Documents\Лабы визуалки билдер\4\Project1.cbproj=C:\Users\frank_000\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
