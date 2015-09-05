@@ -1,0 +1,144 @@
+//---------------------------------------------------------------------
+#include <vcl.h>
+#pragma hdrstop
+
+#include "TabPgDlg.h"
+//---------------------------------------------------------------------
+#pragma resource "*.dfm"
+TPagesDlg *PagesDlg;
+int count;
+//--------------------------------------------------------------------- 
+__fastcall TPagesDlg::TPagesDlg(TComponent* AOwner)
+	: TForm(AOwner)
+{
+}
+//---------------------------------------------------------------------
+
+void __fastcall TPagesDlg::N2Click(TObject *Sender)
+{
+count = 1;
+if(OpenDialog1->Execute())
+{
+		TStringList * Lst = new TStringList;
+		Lst->LoadFromFile(OpenDialog1->FileName);
+        int Index=0;
+	for(int i=0;i<StringGrid1->ColCount;i++)
+            for(int j=0;j<StringGrid1->RowCount;j++)
+                {
+					StringGrid1->Cells[i][j]=Lst->Strings[Index];
+					count++;
+                        Index++;
+                }
+	delete Lst;
+	for (int i=1; i<StringGrid1->ColCount;i++)
+		ComboBox1->Items->Add(StringGrid1->Cells[0][i]);
+}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TPagesDlg::N3Click(TObject *Sender)
+{
+if(SaveDialog1->Execute())
+{
+	TStringList * Lst = new TStringList;
+		Lst->LoadFromFile(SaveDialog1->FileName);
+        int Index=0;
+    for(int i=0;i<StringGrid1->ColCount;i++)
+            for(int j=0;j<StringGrid1->RowCount;j++)
+                {
+                    StringGrid1->Cells[i][j]=Lst->Strings[Index];
+                        Index++;
+                }
+	delete Lst;
+}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPagesDlg::FormCreate(TObject *Sender)
+{
+StringGrid1->Cells[0][0]="Название";
+StringGrid1->Cells[1][0]="Масса";
+StringGrid1->Cells[2][0]="Размеры";
+StringGrid1->Cells[3][0]="Материал";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPagesDlg::SumButtonClick(TObject *Sender)
+{
+float sum=0;
+for (int i=1; i<StringGrid1->ColCount;i++)
+	sum+=StrToFloat(StringGrid1->Cells[1][i]);
+	MessageDlg(FloatToStr(sum),mtInformation,TMsgDlgButtons() << mbOK,0);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPagesDlg::N5Click(TObject *Sender)
+{
+PagesDlg->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPagesDlg::ComboBox1Click(TObject *Sender)
+{
+DetailEdit->Text = StringGrid1->Cells[0][ComboBox1->ItemIndex+1];
+MassEdit->Text = StringGrid1->Cells[1][ComboBox1->ItemIndex+1];
+SizeEdit->Text = StringGrid1->Cells[2][ComboBox1->ItemIndex+1];
+MatEdit->Text = StringGrid1->Cells[3][ComboBox1->ItemIndex+1];
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPagesDlg::DeleteButtonClick(TObject *Sender)
+{
+ for (int i=1; i<StringGrid1->ColCount;i++)
+	if (DetailEdit->Text == StringGrid1->Cells[0][i]) {
+	StringGrid1->Cells[0][i] = "";
+	StringGrid1->Cells[1][i] = "";
+	StringGrid1->Cells[2][i] = "";
+	StringGrid1->Cells[3][i] = "";
+	DetailEdit->Clear();
+	MassEdit->Clear();
+	SizeEdit->Clear();
+	MatEdit->Clear();
+	ComboBox1->Items->Delete(i-1);
+	ComboBox1->ItemIndex = -1;
+	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TPagesDlg::SearchButtonClick(TObject *Sender)
+{
+ for (int i=1; i<StringGrid1->ColCount;i++)
+	if (NameEdit->Text == StringGrid1->Cells[0][i]) {
+	DetailEdit->Text = StringGrid1->Cells[0][i];
+	MassEdit->Text = StringGrid1->Cells[1][i];
+	SizeEdit->Text = StringGrid1->Cells[2][i];
+	MatEdit->Text = StringGrid1->Cells[3][i];
+	NameEdit->Clear();
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPagesDlg::ClearButtonClick(TObject *Sender)
+{
+if (MessageDlg("Вы хотите очистить поля?",mtWarning,TMsgDlgButtons() << mbOK,0) == IDOK) {
+AddNameEdit->Clear();
+AddMassEdit->Clear();
+AddSizeEdit->Clear();
+AddMatEdit->Clear();
+}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPagesDlg::AddButtonClick(TObject *Sender)
+{
+if (MessageDlg("Вы хотитe добавить поле?",mtWarning,TMsgDlgButtons() << mbOK,0) == IDOK){
+StringGrid1->Cells[0][4] = AddNameEdit->Text;
+StringGrid1->Cells[1][4] = AddMassEdit->Text;
+StringGrid1->Cells[2][4] = AddSizeEdit->Text;
+StringGrid1->Cells[3][4] = AddNMatEdit->Text;
+}
+}
+//---------------------------------------------------------------------------
+

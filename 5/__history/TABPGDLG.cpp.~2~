@@ -1,0 +1,58 @@
+//---------------------------------------------------------------------
+#include <vcl.h>
+#pragma hdrstop
+
+#include "TabPgDlg.h"
+#include "Unit1.cpp"
+//---------------------------------------------------------------------
+#pragma resource "*.dfm"
+TPagesDlg *PagesDlg;
+struct detail {
+	AnsiString name,material,size;
+	float mass;
+	};
+//--------------------------------------------------------------------- 
+__fastcall TPagesDlg::TPagesDlg(TComponent* AOwner)
+	: TForm(AOwner)
+{
+}
+//---------------------------------------------------------------------
+
+void __fastcall TPagesDlg::N2Click(TObject *Sender)
+{
+if(OpenDialog1->Execute())
+{
+        TStringList * Lst = new TStringList;
+        for(int i=0;i<StringGrid1->ColCount;i++)
+                for(int j=0;j<StringGrid1->RowCount;j++)
+                        Lst->Add(StringGrid1->Cells[i][j]);
+        Lst->LoadFromFile(SaveDialog1->FileName);
+        delete Lst;
+}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TPagesDlg::N3Click(TObject *Sender)
+{
+if(SaveDialog1->Execute())
+{
+        TStringList * Lst = new TStringList;
+        for(int i=0;i<StringGrid1->ColCount;i++)
+                for(int j=0;j<StringGrid1->RowCount;j++)
+                        Lst->Add(StringGrid1->Cells[i][j]);
+        Lst->SaveToFile(SaveDialog1->FileName);
+        delete Lst;
+}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPagesDlg::FormCreate(TObject *Sender)
+{
+StringGrid1->Cells[0][0]="Название";
+StringGrid1->Cells[1][0]="Масса";
+StringGrid1->Cells[2][0]="Размеры";
+StringGrid1->Cells[3][0]="Материал";
+}
+//---------------------------------------------------------------------------
+
